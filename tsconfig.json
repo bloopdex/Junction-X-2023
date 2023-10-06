@@ -28,6 +28,6 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs"
-  ],
+, "src/pages/map/Geocoder.js", "src/pages/layout/index.js"  ],
   "exclude": ["node_modules"]
 }
