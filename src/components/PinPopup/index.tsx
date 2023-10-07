@@ -1,6 +1,7 @@
 import { use, useEffect, useState } from "react";
 import { Tabs } from "../Tabs";
 import { useDirectionsStore } from "@store/directions";
+import VideoPlayer from "../VideoPlayer";
 
 export interface PinProps {
   id: number;
@@ -23,6 +24,14 @@ export interface PinProps {
 interface PinPopupProps {
   pin: PinProps;
   setSelectedPin: (pin: PinProps | any) => void;
+}
+
+interface VideoPlayerProps {
+  videoStreamUrl: string;
+}
+
+interface VideoPlayerProps {
+  videoStreamUrl: string;
 }
 
 export const PinPopup = ({ pin, setSelectedPin }: PinPopupProps) => {
@@ -57,8 +66,7 @@ export const PinPopup = ({ pin, setSelectedPin }: PinPopupProps) => {
     });
   };
 
-  
-
+  const videoStreamUrl1 = "ws://13.38.173.241:3333/app/1";
 
   return (
     <div className="w-100 h-screen absolute top-1/2 right-[150px] transform translate-x-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-lg ">
@@ -72,14 +80,9 @@ export const PinPopup = ({ pin, setSelectedPin }: PinPopupProps) => {
       </div>
       <div className="flex flex-col">
         {/* vide  */}
-        <iframe
-          width="100%"
-          height="200"
-          src="https://www.youtube.com/embed/FLaUUPx76zc"
-        ></iframe>
+        <VideoPlayer />
         <div className="p-4">
           <div className="text-lg font-bold flex flex-row justify-between">
-            <div className="w-10/12">{pin.station_name}</div>
             <div className="flex justify-center align-middle "></div>
           </div>
           <div className="flex flex-row justify-between ">

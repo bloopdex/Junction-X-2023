@@ -10,119 +10,175 @@ import {
   Tooltip,
   IconButton,
 } from "@material-tailwind/react";
+import VideoPlayer from "../VideoPlayer";
 
 interface DroneCardProps {
+  youtube: string;
   title: string;
+  air: string;
+  power: string;
+  battery: string;
 }
 
 export function DroneCard(props: DroneCardProps) {
   return (
-    <Card className="w-full max-w-[26rem] shadow-lg">
+    <Card className="w-full h-56 max-w-[26rem] shadow-lg">
       <CardHeader floated={false} color="blue-gray">
-        <img
-          src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-          alt="ui/ux review check"
-        />
-        <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
-        <IconButton
-          size="sm"
-          color="red"
-          variant="text"
-          className="!absolute top-4 right-4 rounded-full"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="h-6 w-6"
-          >
-            <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-          </svg>
-        </IconButton>
+        <VideoPlayer />
       </CardHeader>
       <CardBody>
-        <div className="mb-3 flex items-center justify-between">
-          <Typography variant="h5" color="blue-gray" className="font-medium">
+        <div className="flex items-center justify-center mt-2">
+          <Typography
+            variant="h5"
+            color="blue-gray"
+            className="font-medium text-center"
+          >
             {props.title}
           </Typography>
         </div>
-        <div className="group mt-8 inline-flex flex-wrap items-center gap-3">
-          <Tooltip content="$129 per night">
-            <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
+        <div className="flex flex-row items-center justify-center gap-4 mt-2 mb-2">
+          <Tooltip content={props.air} className="text-white p-2 bg-blue-400">
+            <span className="cursor-pointer rounded-full border border-gray-900/5 bg-blue-400 p-3 text-gray-900 transition-colors hover:border-gray-900/10 group-hover:opacity-70">
               <svg
+                viewBox="0 0 960 960"
+                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="h-5 w-5"
+                className="h-5 w-5 text-white"
               >
-                <path d="M12 7.5a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
+                <g clip-path="url(#clip0_1464_7948)">
+                  <path
+                    d="M879.455 139.428C875.337 166.002 865.072 191.637 847.246 211.727C812.295 253.128 773.447 290.826 731.448 325.044C665.687 380.762 597.731 433.892 530.501 487.809C485.228 522.303 438.989 555.516 392.931 588.928C371.419 608.645 350.309 633.678 317.635 629.927C271.962 617.752 287.274 559.124 310.876 532.727C346.462 487.504 384.423 444.173 423.127 401.594C518.236 296.456 691.896 87.9521 841.06 85.3984C868.23 90.5966 880.75 112.538 879.455 139.428Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M811.259 665.15C811.772 686.29 803.019 702.399 786.811 715.121C734.136 768.578 625.992 541.253 600.483 503.259C592.118 486.429 591.298 463.749 605.995 450.924C634.741 425.515 663.776 400.433 692.734 375.265C711.785 355.866 740.814 335.604 757.114 369.72C781.941 466.339 803.362 565.395 811.259 665.15Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M243.227 129.194C245.123 95.895 287.749 83.935 315.343 92.4714C401.347 116.265 487.097 142.91 569.663 176.645C586.414 186.663 589.475 205.285 575.878 219.238C542.408 253.358 507.118 285.716 474.415 320.606C463.255 332.46 457.127 334.3 443.672 325.346C428.524 315.266 413.574 304.659 399.756 292.855C362.557 255.316 246.849 177.38 243.227 129.194Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M381.422 818.983C382.036 809.804 388.626 801.987 396.609 794.905C452.037 747.128 505.638 697.452 557.236 645.571C565.236 637.877 574.006 630.944 582.742 624.067C603.366 606.342 626.18 632.147 606.413 650.5C547.346 708.956 487.396 766.532 428.663 825.322C415.96 841.658 381.498 848.645 381.422 818.983Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M299.394 301.955C253.828 364.559 193.223 416.964 142.237 475.792C132.351 486.032 124.11 498.878 111.123 505.427C94.791 514.974 73.4183 495.444 82.7083 478.673C86.0728 471.897 91.4947 465.897 96.8819 460.413C144.012 415.759 186.896 366.971 232.078 320.399C248.035 306.719 288.438 261.654 299.394 301.955Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M297.801 681.185C280.545 709.908 248.877 731.396 225.952 756.135C200.428 778.178 179.649 807.308 149.592 823.247C142.998 826.282 136.034 825.714 130.489 820.204C118.609 808.443 130.848 792.564 139.558 783.23C179.919 745.319 220.611 707.76 261.263 670.159C273.313 655.337 297.503 656.624 297.801 681.185Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M477.17 645.218C472.714 729.395 380.207 685.882 393.242 621.322C397.894 602.578 418.726 593.869 431.97 581.536C441.465 574.143 452.012 577.112 461.745 580.522C474.781 588.055 472.773 628.869 477.17 645.218Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M239.188 466.68C254.279 426.677 297.726 429.322 329.479 447.806C369.367 469.597 321.938 503.754 304.587 523.823C302.106 526.325 296.571 527.869 293.141 527.023C261.535 520.884 246.992 496.748 239.188 466.68Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M611.631 875.47C587.366 876.662 581.795 852.731 596.739 838.615C605.081 830.917 613.421 823.212 621.596 815.338C639.325 798.259 656.93 781.051 674.642 763.955C681.576 756.571 693.8 753.23 701.12 761.009C709.07 768.206 706.09 780.432 698.74 787.48C680.3 807.512 661.788 827.476 643.329 847.491C635.137 857.531 622.746 870.926 611.631 875.47Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M142.756 259.147C121.484 259.546 111.763 238.457 124.225 224.123C129.176 218.439 134.964 213.456 140.587 208.391C154.778 196.322 167.863 182.605 183.1 171.897C199.216 162.177 217.652 180.933 208.054 196.967C193.209 216.426 174.245 232.79 157.158 250.311C152.491 254.78 145.921 257.264 142.756 259.147Z"
+                    fill="currentColor"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1464_7948">
+                    <rect
+                      width="800"
+                      height="790.909"
+                      fill="white"
+                      transform="translate(80 85)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+            </span>
+          </Tooltip>
+          <Tooltip content={props.power} className="text-white p-2 bg-blue-900">
+            <span className="cursor-pointer rounded-full border border-gray-900/5 bg-blue-900 p-3 text-gray-900 transition-colors hover:border-gray-900/10 group-hover:opacity-70">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 text-white"
+              >
                 <path
-                  fillRule="evenodd"
-                  d="M1.5 4.875C1.5 3.839 2.34 3 3.375 3h17.25c1.035 0 1.875.84 1.875 1.875v9.75c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 011.5 14.625v-9.75zM8.25 9.75a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0zM18.75 9a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V9.75a.75.75 0 00-.75-.75h-.008zM4.5 9.75A.75.75 0 015.25 9h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H5.25a.75.75 0 01-.75-.75V9.75z"
-                  clipRule="evenodd"
+                  d="M12 15.1082V20.1498C12 21.2635 11.0955 22.1875 10.0128 21.9673C5.44193 21.0381 2 16.9659 2 12.0832C2 10.2294 2.49614 8.49247 3.36182 7M16.3641 21.1581C19.7003 19.5239 22 16.0743 22 12.0832C22 6.51441 17.5228 2 12 2C10.1786 2 8.47087 2.49102 7 3.34895"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 />
-                <path d="M2.25 18a.75.75 0 000 1.5c5.4 0 10.63.722 15.6 2.075 1.19.324 2.4-.558 2.4-1.82V18.75a.75.75 0 00-.75-.75H2.25z" />
+                <path
+                  d="M9 11.8C9 11.3582 9.35817 11 9.8 11H14.2C14.6418 11 15 11.3582 15 11.8V12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12V11.8Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M13.5 11V9"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M10.5 11V9"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
               </svg>
             </span>
           </Tooltip>
-          <Tooltip content="Free wifi">
-            <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
+          <Tooltip
+            content={props.battery}
+            className="text-white p-2 bg-red-400"
+          >
+            <span className="cursor-pointer rounded-full border border-gray-900/5 bg-red-500 p-3 text-gray-900 transition-colors hover:border-gray-900/10 group-hover:opacity-70">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                className="h-5 w-5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-white h-5 w-5"
               >
                 <path
-                  fillRule="evenodd"
-                  d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 010 1.061l-.53.53a.75.75 0 01-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 01-1.06 0l-.53-.53a.75.75 0 010-1.06zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 010 1.061l-.53.53a.75.75 0 01-1.062 0 8.25 8.25 0 00-11.667 0 .75.75 0 01-1.06 0l-.53-.53a.75.75 0 010-1.06zm3.204 3.182a6 6 0 018.486 0 .75.75 0 010 1.061l-.53.53a.75.75 0 01-1.061 0 3.75 3.75 0 00-5.304 0 .75.75 0 01-1.06 0l-.53-.53a.75.75 0 010-1.06zm3.182 3.182a1.5 1.5 0 012.122 0 .75.75 0 010 1.061l-.53.53a.75.75 0 01-1.061 0l-.53-.53a.75.75 0 010-1.06z"
-                  clipRule="evenodd"
+                  d="M10.7895 9.1965C10.7895 8.996 10.7092 8.80384 10.5665 8.66293C10.4239 8.52203 10.2308 8.4441 10.0303 8.44656C8.65077 8.46347 7.27168 8.52648 5.89533 8.63559L5.7066 8.65055C5.26765 8.68534 4.90256 9.00202 4.80609 9.43165C4.42762 11.1172 4.42776 12.8662 4.80621 14.5516C4.90239 14.9799 5.26571 15.2964 5.7035 15.3325L5.87777 15.3469C7.25968 15.461 8.64458 15.5269 10.0299 15.5445C10.2305 15.5471 10.4237 15.4692 10.5664 15.3283C10.7091 15.1874 10.7895 14.9952 10.7895 14.7946V9.1965Z"
+                  fill="currentColor"
                 />
-              </svg>
-            </span>
-          </Tooltip>
-          <Tooltip content="2 bedrooms">
-            <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="h-5 w-5"
-              >
-                <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
-                <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
-              </svg>
-            </span>
-          </Tooltip>
-          <Tooltip content={`65" HDTV`}>
-            <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="h-5 w-5"
-              >
-                <path d="M19.5 6h-15v9h15V6z" />
                 <path
-                  fillRule="evenodd"
-                  d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v11.25C1.5 17.16 2.34 18 3.375 18H9.75v1.5H6A.75.75 0 006 21h12a.75.75 0 000-1.5h-3.75V18h6.375c1.035 0 1.875-.84 1.875-1.875V4.875C22.5 3.839 21.66 3 20.625 3H3.375zm0 13.5h17.25a.375.375 0 00.375-.375V4.875a.375.375 0 00-.375-.375H3.375A.375.375 0 003 4.875v11.25c0 .207.168.375.375.375z"
-                  clipRule="evenodd"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M22.25 14V9.99997C22.25 9.03347 21.4665 8.24997 20.5 8.24997H19.85V8.18964C19.85 6.9186 18.8721 5.8615 17.6049 5.7627L16.3364 5.66379C12.7842 5.38681 9.21579 5.38681 5.66357 5.66379L4.31597 5.76886C3.10632 5.86318 2.11643 6.76932 1.91582 7.96594C1.46808 10.6367 1.46808 13.3633 1.91582 16.034C2.11643 17.2306 3.10632 18.1368 4.31596 18.2311L5.66357 18.3361C9.2158 18.6131 12.7842 18.6131 16.3364 18.3361L17.6049 18.2372C18.8721 18.1384 19.85 17.0813 19.85 15.8103V15.75H20.5C21.4665 15.75 22.25 14.9665 22.25 14ZM20.75 9.99997V14C20.75 14.138 20.6381 14.25 20.5 14.25L19.1 14.25C18.6858 14.25 18.35 14.5858 18.35 15V15.8103C18.35 16.2981 17.9747 16.7039 17.4883 16.7418L16.2198 16.8407C12.7452 17.1116 9.25478 17.1116 5.78017 16.8407L4.43257 16.7356C3.90973 16.6948 3.48188 16.3032 3.39518 15.786C2.97496 13.2795 2.97496 10.7205 3.39518 8.21395C3.48188 7.69674 3.90973 7.30509 4.43257 7.26432L5.78017 7.15925C9.25478 6.88832 12.7452 6.88832 16.2198 7.15925L17.4883 7.25816C17.9747 7.29608 18.35 7.7018 18.35 8.18964V8.99997C18.35 9.41418 18.6858 9.74997 19.1 9.74997H20.5C20.6381 9.74997 20.75 9.8619 20.75 9.99997Z"
+                  fill="currentColor"
                 />
               </svg>
             </span>
           </Tooltip>
-          <Tooltip content="And +20 more">
-            <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
-              +20
+          <Tooltip
+            content="Jump To Map"
+            className="text-white p-2 bg-green-500"
+          >
+            <span className="cursor-pointer rounded-full border border-gray-900/5 bg-green-500 p-3 text-gray-900 transition-colors hover:border-gray-900/10 group-hover:opacity-70">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-white h-5 w-5"
+              >
+                <path
+                  d="M11 16C11 16.5523 11.4477 17 12 17C12.5523 17 13 16.5523 13 16H11ZM8.21567 14.3922C8.75496 14.2731 9.09558 13.7394 8.97647 13.2001C8.85735 12.6608 8.32362 12.3202 7.78433 12.4393L8.21567 14.3922ZM16.2157 12.4393C15.6764 12.3202 15.1426 12.6608 15.0235 13.2001C14.9044 13.7394 15.245 14.2731 15.7843 14.3922L16.2157 12.4393ZM15 7C15 8.65685 13.6569 10 12 10V12C14.7614 12 17 9.76142 17 7H15ZM12 10C10.3431 10 9 8.65685 9 7H7C7 9.76142 9.23858 12 12 12V10ZM9 7C9 5.34315 10.3431 4 12 4V2C9.23858 2 7 4.23858 7 7H9ZM12 4C13.6569 4 15 5.34315 15 7H17C17 4.23858 14.7614 2 12 2V4ZM11 11V16H13V11H11ZM20 17C20 17.2269 19.9007 17.5183 19.5683 17.8676C19.2311 18.222 18.6958 18.5866 17.9578 18.9146C16.4844 19.5694 14.3789 20 12 20V22C14.5917 22 16.9861 21.5351 18.7701 20.7422C19.6608 20.3463 20.4435 19.8491 21.0171 19.2463C21.5956 18.6385 22 17.8777 22 17H20ZM12 20C9.62114 20 7.51558 19.5694 6.04218 18.9146C5.30422 18.5866 4.76892 18.222 4.43166 17.8676C4.0993 17.5183 4 17.2269 4 17H2C2 17.8777 2.40438 18.6385 2.98287 19.2463C3.55645 19.8491 4.33918 20.3463 5.2299 20.7422C7.01386 21.5351 9.40829 22 12 22V20ZM4 17C4 16.6824 4.20805 16.2134 4.96356 15.6826C5.70129 15.1644 6.81544 14.7015 8.21567 14.3922L7.78433 12.4393C6.22113 12.7846 4.83528 13.3285 3.81386 14.0461C2.81023 14.7512 2 15.747 2 17H4ZM15.7843 14.3922C17.1846 14.7015 18.2987 15.1644 19.0364 15.6826C19.792 16.2134 20 16.6824 20 17H22C22 15.747 21.1898 14.7512 20.1861 14.0461C19.1647 13.3285 17.7789 12.7846 16.2157 12.4393L15.7843 14.3922Z"
+                  fill="currentColor"
+                />
+              </svg>
             </span>
           </Tooltip>
         </div>
       </CardBody>
-      <CardFooter className="pt-3">
-        <Button size="lg" fullWidth={true}>
-          Reserve
-        </Button>
-      </CardFooter>
     </Card>
   );
 }

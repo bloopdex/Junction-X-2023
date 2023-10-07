@@ -10,6 +10,7 @@ import Input from "../Input";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import BatterySupply from "../BatterySupply";
+import Link from "next/link";
 
 function SideBar() {
   const [styleSelected, setStyleSelected] = useState<number>(0);
@@ -27,7 +28,7 @@ function SideBar() {
   return (
     <div className="flex p-4 flex-col align-center justify-between h-screen items-center">
       <div className="flex flex-col gap-4">
-        <div className="flex flex-row align-center justify-center items-center">
+        <Link href={"/"} className="flex flex-row align-center justify-center items-center">
           <img src="logo.png" className="mr-2 w-20" />
           <div className="flex flex-col gap-1 justify-start items-start">
             <h1 className="text-xl">
@@ -35,7 +36,7 @@ function SideBar() {
             </h1>
             <p className="text-[0.6rem]">tracking your drone</p>
           </div>
-        </div>
+        </Link>
         {/* <Button text="Create Drone" /> */}
         <div className="flex flex-col gap-2 text-center">
           <p className="text-[.8rem]">Style De Map</p>
@@ -175,12 +176,13 @@ function SideBar() {
       >
         Filter
       </button>
-      <div className="flex flex-row gap-2 font-bold text-2xl text-primary-700">
+      <Link
+        href={"/drones"}
+        className="flex flex-row gap-2 font-bold text-2xl text-primary-700"
+      >
         <AiFillPieChart />
-        <button type="button" onClick={() => setSelected(2)}>
-          Analysis
-        </button>
-      </div>
+        <p>My Drones</p>
+      </Link>
       {/* <FiltersButton /> */}
     </div>
   );

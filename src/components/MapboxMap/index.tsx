@@ -47,14 +47,14 @@ export const MapboxMap = () => {
       if (event.key === "style") {
         const style = event.newValue;
         if (style) {
-          setCurrentMapStyle("mapbox://styles/mapbox/streets-v9");
+          setCurrentMapStyle("mapbox://styles/mapbox/streets-v12");
         }
       }
     });
     if (style)
       switch (style) {
         case "0":
-          setCurrentMapStyle("mapbox://styles/mapbox/streets-v9");
+          setCurrentMapStyle("mapbox://styles/mapbox/streets-v12");
           break;
         case "1":
           setCurrentMapStyle("mapbox://styles/mapbox/satellite-v9");
@@ -63,7 +63,7 @@ export const MapboxMap = () => {
           setCurrentMapStyle("mapbox://styles/mapbox/dark-v10");
           break;
         default:
-          setCurrentMapStyle("mapbox://styles/mapbox/streets-v9");
+          setCurrentMapStyle("mapbox://styles/mapbox/streets-v12");
           break;
       }
     return () => {

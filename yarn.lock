@@ -498,6 +498,11 @@
   resolved "https://registry.npmjs.org/@types/normalize-package-data/-/normalize-package-data-2.4.2.tgz"
   integrity sha512-lqa4UEhhv/2sjjIQgjX8B+RBjj47eo0mzGasklVJ78UKGQY1r0VpB9XHDaZZO9qzEFDdy4MrXLuEaSmPrPSe/A==
 
+"@types/ovenplayer@^0.10.7":
+  version "0.10.7"
+  resolved "https://registry.npmjs.org/@types/ovenplayer/-/ovenplayer-0.10.7.tgz"
+  integrity sha512-SyO6QW5XPvP2ILJWRkEsERjojLZWHUZ8LGPTEMMZrDsQZA0hu7xRzDw6j9ZRrV1hnlGTXROmSHxGkTohP9lF5Q==
+
 "@types/prop-types@*":
   version "15.7.7"
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.7.tgz"
@@ -1003,6 +1008,11 @@ cookie@^0.5.0:
   version "0.5.0"
   resolved "https://registry.npmjs.org/cookie/-/cookie-0.5.0.tgz"
   integrity sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==
+
+core-js@^3.16.3:
+  version "3.33.0"
+  resolved "https://registry.npmjs.org/core-js/-/core-js-3.33.0.tgz"
+  integrity sha512-HoZr92+ZjFEKar5HS6MC776gYslNOKHt75mEBKWKnPeFDpZ6nH5OeF3S6HFT1mUAUZKrzkez05VboaX8myjSuw==
 
 cross-spawn@^7.0.2:
   version "7.0.3"
@@ -2710,6 +2720,14 @@ optionator@^0.9.3:
     prelude-ls "^1.2.1"
     type-check "^0.4.0"
 
+ovenplayer@^0.10.31:
+  version "0.10.31"
+  resolved "https://registry.npmjs.org/ovenplayer/-/ovenplayer-0.10.31.tgz"
+  integrity sha512-x/6SbN0FdSSwZxMeijFrIdPI28kjeBC6k+Ey74TJdg2KpQsAbTzWlJuUP9abVw9FsRJfMQOsN5lLcxt0vJdC8w==
+  dependencies:
+    core-js "^3.16.3"
+    whatwg-fetch "^3.6.2"
+
 p-cancelable@^2.0.0:
   version "2.1.1"
   resolved "https://registry.npmjs.org/p-cancelable/-/p-cancelable-2.1.1.tgz"
@@ -3719,6 +3737,11 @@ watchpack@2.4.0:
   dependencies:
     glob-to-regexp "^0.4.1"
     graceful-fs "^4.1.2"
+
+whatwg-fetch@^3.6.2:
+  version "3.6.19"
+  resolved "https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-3.6.19.tgz"
+  integrity sha512-d67JP4dHSbm2TrpFj8AbO8DnL1JXL5J9u0Kq2xW6d0TFDbCA3Muhdt8orXC22utleTVj7Prqt82baN6RBvnEgw==
 
 which-boxed-primitive@^1.0.2:
   version "1.0.2"
